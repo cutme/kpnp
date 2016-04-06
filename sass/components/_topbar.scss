@@ -1,0 +1,29 @@
+.c-topbar {
+	z-index: 20;
+	width: 100%;
+	height: 90px;
+	will-change: transform;
+	
+	.o-wrap {
+		height: 100%;
+	}
+	
+	.c-logo {
+		left: 15px;
+	}
+	
+	&--black {
+		background-color: $color-black;
+		color: white;
+	}
+	
+	&--white {
+		background-color: white;
+		color: $black--brighter;
+
+		.fixed & {
+			position: fixed;
+			left: 0; top: 0;
+		}
+	}
+}

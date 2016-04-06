@@ -1,0 +1,16 @@
+body {
+	line-height: 1.4;
+	font: {
+		family: $text;
+		size: #{$base-font-size}px;
+		weight: $regular;
+	}
+	color: $black;
+}
+
+a { 
+	@include hover;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}

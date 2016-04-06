@@ -1,0 +1,54 @@
+.c-numbers {
+	margin-bottom: 60px;
+
+	&__content {
+		float: left;
+		width: 580px;
+	}
+	
+	&__sidebar {
+		float: left;
+		width: 405px;
+		padding: 100px 0 0 80px;
+	}
+	
+	&__box {
+		float: left;
+		width: 290px; height: 290px;
+		padding: 50px 15px 25px 35px;
+
+		&--black {
+			background-color: $color-black;
+			color: white;
+		}
+		
+		&--blue {
+			background-color: $blue;
+			color: white;
+		}
+		
+		&--white {
+			p {
+				color: $gray--brighter;
+			}
+		}
+		
+		p {
+			font-family: $georgia;
+		}
+	}
+	
+	&__box-title {
+		display: block;
+		margin-bottom: 25px;
+		line-height: 1;
+		font: {
+			size: em(90);
+			weight: $black;
+		}
+	}
+	
+	small {
+		font-size: 36px;
+	}
+}

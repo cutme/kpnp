@@ -1,0 +1,58 @@
+.c-form {
+	margin-bottom: 60px;
+
+	&__fields {
+		margin-bottom: 40px;
+	}
+
+	input[type=text],
+	input[type=email],
+	textarea {
+		padding: 20px 15px;
+		border-bottom: 1px solid $gray--brightest;
+		font-size: em(16);
+	}
+	
+	input[type=text],
+	input[type=email] {
+		width: 370px;
+	}
+	
+	&--contact {
+		margin-bottom: 60px;
+	}
+	
+	button[type=submit] {
+		padding-left: 110px;
+		
+		&:before {
+			position: absolute;
+			left: 0; top: 0;
+			display: block;
+			width: 70px; height: 70px;
+			background-color: $blue;
+			font-family: $icons;
+			line-height: 70px;
+			text-align: center;
+			color: white;
+			content: "\e903";
+		}
+	}
+	
+	label {
+		float: left;
+		margin-bottom: 20px;
+
+		&:nth-of-type(2) {
+			margin: 0 30px;
+		}
+	}
+	
+	textarea {
+		padding-bottom: 5px;
+	}
+	
+	@include input-placeholder {
+		color: black;
+	}
+}

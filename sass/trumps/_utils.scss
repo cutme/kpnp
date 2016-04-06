@@ -1,0 +1,30 @@
+.u-toedge {
+	&:before {
+		position: absolute;
+		display: block;
+		width: calc((100% - 1170px) / 2 );
+		height: 100%;
+		background-color: $blue;
+		content: ' ';
+	}
+	
+	&--left {
+		left: 0;
+	}
+}
+
+.u-posy {
+	@include scut-center-transform(y);
+}
+
+.u-shadow--down {
+	@include box-shadow( rgba(black, .07) 0 -10px 16px inset );
+}
+
+.u-shadow--up-down {
+	@include box-shadow(  rgba(black, .07) 0 -10px 16px inset, rgba(black, .07) 0 10px 16px inset );
+}
+
+.u-smooth {
+	@include antialias;
+}

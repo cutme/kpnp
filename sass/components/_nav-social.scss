@@ -1,0 +1,40 @@
+.c-nav-social {
+	float: right;
+
+	&__lead {
+		display: block;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+		font: {
+			size: em(14);
+			weight: $black;
+		}
+	}
+
+	a {
+		padding: 0 15px;
+		font-size: em(20);
+		color: $blue;
+	}
+	
+	li {
+		float: left;
+		border-right: 1px solid $blue;		
+
+		&:first-child {
+			.c-footer & {
+				a {
+					padding-left: 0;
+				}
+			}
+		}
+
+		&:last-child {
+			border: none;
+
+			a {
+				padding-right: 0;
+			}
+		}
+	}
+}

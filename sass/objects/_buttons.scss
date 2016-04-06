@@ -1,0 +1,27 @@
+.o-btn {
+	@include box-shadow( rgba(black, .15) 0 0 50px );
+	@include hover;
+	position: relative;
+	display: inline-block;
+	height: 70px;
+	background-color: white;
+	font-family: $text;
+	color: $blue;
+	
+	&--normal {
+		padding: 0 40px;
+		line-height: 70px;
+		font-size: em(20);
+	}
+	
+	&:hover {
+		.no-mobile & {
+			background-color: $blue;
+			color: white;
+		}
+	}
+	
+	&:active {
+		@include box-shadow( rgba(black, .2) 0 0 34px );
+	}
+}

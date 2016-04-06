@@ -1,0 +1,14 @@
+@mixin clear {
+	clear: both;
+	
+	&:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+}
+
+.clear {
+	@include clear;
+	float: none !important;
+}

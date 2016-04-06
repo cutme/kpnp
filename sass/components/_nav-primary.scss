@@ -1,0 +1,21 @@
+.c-nav-primary {
+	right: 0;
+	text-transform: uppercase;
+
+	a {
+		padding: 0 10px;
+		font-size: em(14);
+
+		&:hover {
+			color: $blue;
+		}
+	}
+	
+	li {
+		float: left;
+		
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}

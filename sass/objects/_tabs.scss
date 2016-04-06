@@ -1,0 +1,27 @@
+.o-tabs {
+	&__nav {
+		margin-bottom: 40px;
+		
+		li {
+			float: left;
+			margin-right: 10px;
+			
+			.o-btn {
+				display: inline-block;
+				padding: 0 20px;
+			}
+			
+			&.is-active {
+				@include opacity(.5);
+			}
+		}
+	}
+
+	&__item {
+		display: none;
+		
+		&.is-active {
+			display: block;
+		}
+	}
+}

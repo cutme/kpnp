@@ -1,0 +1,39 @@
+.c-nav-target {
+	left: 0;
+
+	a {
+		display: block;
+		padding: 0 15px 2px 15px;
+		font-size: em(14);
+		color: $gray;
+
+		&:hover {
+			color: $blue;
+		}
+	}
+	
+	li {
+		float: left;
+
+		&.current-menu-item {
+			position: relative;
+			
+			&:after {
+				position: absolute;
+				left: 50%; bottom: -41px;
+				display: block;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 8px 7.5px 0 7.5px;
+				border-color: white transparent transparent transparent;
+				margin-left: -8px;
+				content: ' ';
+			}
+
+			a {
+				border-bottom: 2px solid $blue;
+			}
+		}
+	}
+}

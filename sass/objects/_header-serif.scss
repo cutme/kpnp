@@ -1,0 +1,13 @@
+.o-header-serif {
+	margin-bottom: 1em;
+	font: {
+		family: $abril;
+		size: em(40);
+	}
+	line-height: 1.2;
+	
+	&--center {
+		text-align: center;
+		font-size: em(36);
+	}
+}

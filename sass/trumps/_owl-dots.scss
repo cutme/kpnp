@@ -1,0 +1,41 @@
+.owl-dots {
+	line-height: 1;
+
+	.owl-dot {
+		@include antialias;
+		display: inline-block;
+		padding: 0 2px;
+		font-size: 26px;
+		cursor: pointer;
+		
+		&:after {
+			content: '/';
+		}
+		
+		&.active {
+			color: $blue !important;
+		}
+	}
+	
+	.c-clients & {
+		margin-bottom: 50px;
+		text-align: center;
+		
+		.owl-dot {
+			font-size: 33px;
+			color: $gray--brightest;
+		}
+	}
+	
+	.c-reviews & {
+	    position: absolute;
+	    left: 80px;
+	    top: -24px;
+	    z-index: 20;
+	    color: white;
+	    
+	    .owl-dot {
+		    font-size: 40px;
+	    }
+	}
+}

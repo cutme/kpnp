@@ -1,0 +1,65 @@
+.c-activity {
+	@include box-shadow( rgba(black, .1) 0 0 34px );
+	width: 1320px;
+	position: relative; 
+	top: -40px;
+	z-index: 5;
+	background-color: white;
+	margin: 0 auto 100px auto;
+
+	&__blocks {
+		overflow: hidden;
+	}
+	
+	&__block {
+		float: left;
+	}
+
+	&__content {
+		display: block;
+		position: relative; z-index: 5;
+		width: 440px; min-height: 235px;
+		background-color: white;
+		padding: 50px 50px 50px 80px;
+		
+		&:hover {
+			@include box-shadow( rgba(black, .1) 0 0 34px );
+			z-index: 10;
+		}
+	}
+	
+	&__excerpt {
+		font-family: $georgia;
+		color: $gray--brighter;	
+	}
+	
+	h3 {
+		position: absolute;
+		top: -40px; left: 50px;
+		font: {
+			size: em(17);
+			weight: $bold;
+		}
+		color: $blue;
+	}
+	
+	h4 {
+		position: relative;
+		margin-bottom: 1em;
+		font: {
+			size: em(25);
+			weight: $black;
+		}
+		color: $black--brightest;
+		
+		&:before {
+			position: absolute;
+			left: -30px;
+			top: 0;
+			display: block;
+			width: 3px; height: 100%;
+			background-color: $blue;
+			content: ' ';
+		}
+	}	
+}

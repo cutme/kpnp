@@ -1,0 +1,18 @@
+[class^="icon-"], [class*=" icon-"] {
+	@include icomoon;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.fixed {
+	padding-top: 90px;
+}
+
+.safari {
+	* {
+		-webkit-backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
+	}
+}

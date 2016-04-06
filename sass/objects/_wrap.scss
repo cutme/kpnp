@@ -1,0 +1,7 @@
+.o-wrap {
+	@include clear;
+	position: relative;
+	z-index: 5;
+	max-width: $grid-base-width + px;
+	margin: 0 auto;
+}

@@ -1,0 +1,42 @@
+.c-nav-footer {
+	float: right;
+	width: 420px;
+	
+	li {
+		float: left;
+		position: relative;
+		width: 210px;
+		margin-bottom: 6px;
+		padding-left: 15px;
+		
+		&:nth-child(2n+1) {
+			clear: left;
+		}
+		
+		&:before {
+			@include border-radius( 50% );
+			display: block;
+			position: absolute;
+			left: 0; top: 10px;
+			width: 3px; height: 3px;
+			background-color: $gray--brighter;
+			content: ' ';
+		}
+		
+		a {
+			font-size: em(12);
+			text-transform: uppercase;
+			
+			&:hover {
+				color: $blue
+			}
+		}
+	}
+	
+	.c-nav-social {
+		float: right;
+		width: 165px;
+		
+		
+	}
+}

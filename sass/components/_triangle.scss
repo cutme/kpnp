@@ -1,0 +1,40 @@
+.c-triangle {
+	position: absolute;
+	right: 135px;
+	top: -60px;
+	width: 180px;
+	height: 420px;
+	line-height: 1.2;
+	text: {
+		align: center;
+		transform: uppercase;
+	}
+	
+	&__lead {
+		position: absolute;
+		left: 0;
+		display: block;
+		width: 100%;
+		font: {
+			size: em(18);
+			weight: $bold;
+		}
+		
+		&--middle {
+			font: {
+				size: em(30);
+				weight: $black;
+			}
+			color: white;
+		}
+		
+		&--top {
+			top: 0;
+		}
+		
+		&--bottom {
+			bottom: 0;
+		}
+	}
+}
+

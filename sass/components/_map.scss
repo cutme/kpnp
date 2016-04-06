@@ -1,0 +1,11 @@
+.c-map {
+	@include background-size(cover);
+	height: 430px;
+	background: {
+		image: url(../img/map.png);
+		repeat: no-repat;
+		position: center;
+	}
+	margin-bottom: 80px;
+}
+

@@ -1,0 +1,22 @@
+.c-address {
+	float: left;
+	width: 460px;
+	
+	p {
+		@include opacity(.3);
+		text-transform: uppercase;
+		font: {
+			size: em(36);
+			weight: $light;
+		}
+	}
+	
+	&__phone {
+		display: inline-block;
+		padding: 2px 5px;
+		background-color: $blue;
+		font-size: em(14);
+		line-height: 1;
+		color: white;
+	}
+}
