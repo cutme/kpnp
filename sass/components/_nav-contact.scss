@@ -7,6 +7,15 @@
 		margin-right: 30px;
 		font-size: em(14);
 		color: white;
+		
+		@media screen and ( max-width: 768px ) {
+			float: none;
+			text-align: right;
+		}
+		
+		@media screen and ( max-width: 600px ) {
+			margin-right: 0;
+		}
 	}
 	
 	a {
@@ -24,5 +33,27 @@
 		margin-right: 15px;
 		vertical-align: middle;
 		color: $blue;
+		
+		@media screen and ( max-width: 600px ) {
+			display: none;
+		}
+	}
+	
+	&__lead {
+		@media screen and ( max-width: 1000px ) {
+			display: none;
+		}
+	}
+	
+	@media screen and ( max-width: 480px ) {
+		li {
+			font-size: em(12);
+		}
+	}
+	
+	@media screen and ( max-width: 375px ) {
+		li {
+			font-size: em(10);
+		}
 	}
 }

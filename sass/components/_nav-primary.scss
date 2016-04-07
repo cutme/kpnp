@@ -1,8 +1,13 @@
 .c-nav-primary {
 	right: 0;
 	text-transform: uppercase;
+	
+	@media screen and ( max-width: 1000px ) {
+		display: none;
+	}
 
 	a {
+		display: block;
 		padding: 0 10px;
 		font-size: em(14);
 
@@ -17,5 +22,27 @@
 		&:last-child {
 			padding-right: 0;
 		}
+	}
+	
+	&.is-mobile {
+		position: absolute;
+		top: 80px;
+		width: 100%;
+		background-color: white;
+		padding-bottom: 25px;
+		
+		li {
+			float: none;
+			text-align: right;
+			
+			a {
+				padding: 5px 30px 5px 20px;
+			}
+		}
+		
+		@media screen and ( max-width: 480px ) {
+			top: 59px;
+		}
+		
 	}
 }

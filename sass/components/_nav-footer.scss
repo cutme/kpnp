@@ -1,11 +1,14 @@
 .c-nav-footer {
-	float: right;
-	width: 420px;
 	
+	@media screen and ( min-width: 769px ) {
+		float: right;
+		width: grid(420);
+	}
+
 	li {
 		float: left;
 		position: relative;
-		width: 210px;
+		width: 50%;
 		margin-bottom: 6px;
 		padding-left: 15px;
 		
@@ -35,8 +38,11 @@
 	
 	.c-nav-social {
 		float: right;
-		width: 165px;
-		
-		
+		width: 165px;		
 	}
+	
+	@media screen and ( max-width: 768px ) {
+		@include clear;
+	}
+	
 }

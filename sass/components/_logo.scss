@@ -1,0 +1,7 @@
+.c-logo {
+	.c-topbar & {
+		@media screen and ( max-width: 480px ) {
+			width: grid(227, 450);
+		}
+	}
+}

@@ -3,7 +3,7 @@
 
 	a {
 		display: block;
-		padding: 0 15px 2px 15px;
+		padding: 0 10px 2px 10px;
 		font-size: em(14);
 		color: $gray;
 
@@ -14,26 +14,50 @@
 	
 	li {
 		float: left;
+		
+		&:after {
+			position: absolute;
+			left: 50%; bottom: -41px;
+			display: none;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 7.5px 0 7.5px;
+			border-color: white transparent transparent transparent;
+			margin-left: -8px;
+			content: ' ';
+		}
 
 		&.current-menu-item {
 			position: relative;
 			
 			&:after {
-				position: absolute;
-				left: 50%; bottom: -41px;
 				display: block;
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 8px 7.5px 0 7.5px;
-				border-color: white transparent transparent transparent;
-				margin-left: -8px;
-				content: ' ';
 			}
 
 			a {
 				border-bottom: 2px solid $blue;
 			}
+		}
+	}
+	
+	@media screen and ( max-width: $grid-base-width+px ) {
+		left: 15px;
+	}
+	
+	@media screen and ( max-width: 480px ) {
+		li {
+			&:first-child {
+				margin-right: 10px;
+			}
+			
+			&:after {
+				bottom: -26px;
+			}
+		}
+
+		a {
+			padding: 0 0 2px 0;
 		}
 	}
 }

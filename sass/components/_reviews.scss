@@ -10,7 +10,11 @@
 	}
 
 	&__items {
-		padding: 145px 70px 145px 475px;
+		padding: 145px 0 145px 405px;
+	}
+	
+	&__item {
+		padding: 0 70px;
 	}
 	
 	&__author {
@@ -49,13 +53,16 @@
 	}
 	
 	.o-header-serif {
-		position: absolute;
-		left: 0;  top: 0;
-		width: 405px;
-		height: 100%;
 		background-color: $blue;
-		padding: 145px 0 0 80px;
-		color: white;		
+		color: white;
+		
+		@media screen and ( min-width: 1001px ) {
+			position: absolute;
+			left: 0;  top: 0;
+			width: 405px;
+			height: 100%;
+			padding: 145px 0 0 80px;
+		}
 	}
 	
 	blockquote {
@@ -67,5 +74,49 @@
 			}
 			color: $gray--brighter;
 		}		
+	}
+	
+	@media screen and ( max-width: 1000px ) {
+		.o-header-serif {
+			padding: 60px 0 60px 80px;
+		}
+		
+		&__items {
+			padding: 40px 80px 60px 80px;
+		}
+		
+		&__item {
+			padding: 0;
+		}
+	}
+	
+	@media screen and ( max-width: 768px ) {
+		.o-header-serif {
+			padding: 60px 0 60px 40px;
+		}
+		
+		&__items {
+			padding: 40px 80px 60px 40px;
+		}
+	}
+	
+	@media screen and ( max-width: 375px ) {
+	
+		&__items {
+			padding: 20px;
+		}
+
+		&__author {
+			margin-bottom: 1em;
+			padding-left: 0;
+			
+			&:before {
+				display: none;
+			}
+			
+			h4 {
+				font-size: em(24);
+			}
+		}
 	}
 }

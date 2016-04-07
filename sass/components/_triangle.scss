@@ -36,5 +36,10 @@
 			bottom: 0;
 		}
 	}
+	
+	@media screen and ( max-width: $grid-base-width+px ) {
+		display: none;
+	}
+	
 }
 

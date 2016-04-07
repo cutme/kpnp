@@ -1,5 +1,18 @@
 /*jshint expr:true */
 
+function debouncer(func, timeout) {
+	var timeoutID;
+	timeout = timeout || 200;
+	return function() {
+		var scope = this,
+			args = arguments;
+		clearTimeout(timeoutID);
+		timeoutID = setTimeout(function() {
+			func.apply(scope, Array.prototype.slice.call(args));
+		}, timeout);
+	};
+}
+
 jQuery(function($) {
 	function exist(o) {
 		d = ($(o).length>0) ? true : false;
@@ -14,13 +27,18 @@ jQuery(function($) {
 	}
 	
 	function isScrolledIntoView(elem) {
-		var $e = elem, 
-			$w = $(window),
-			docViewTop = $w.scrollTop(),
-			docViewBottom = docViewTop + $w.height(),
-			elemTop = $e.offset().top,
-			elemBottom = elemTop + $e.height();
+		var e = elem, 
+			w = $(window),
+			docViewTop = w.scrollTop(),
+			docViewBottom = docViewTop + w.height(),
+			elemTop = e.offset().top,
+			elemBottom = elemTop + e.height();
 		return docViewBottom >= elemTop;
+	}
+
+	function window_smaller_than(n) {
+		var d = ($(window).width() < n) ? true : false;
+		return d;
 	}
 
 	var L = {
@@ -78,8 +96,43 @@ jQuery(function($) {
 	};
 
 	var N = {
+		mobileNav: function() {
+			function shTrigger() {
+				var t = $('.c-nav-trigger'),
+					n = $('.c-nav-primary'),
+					status = false;
+
+				function init() {
+					n.removeClass('u-posy').addClass('is-mobile u-shadow--down');
+					status = true;
+				}
+				t.on('click', function(e) {
+					e.preventDefault();
+					$(this).toggleClass('is-active');
+					n.slideToggle();
+				});
+				$(window).resize(debouncer(function(e) {
+					if (window_smaller_than(1001)) {
+						if (status === false) {
+							init();
+						}
+					} else {
+						if (status === true) {
+							t.removeClass('is-active');
+							n.addClass('u-posy').removeClass('is-mobile u-shadow--down').attr('style', '');
+							status = false;
+						}
+					}
+				}));
+				if (window_smaller_than(1001)) {
+					init();
+				}
+			}
+			shTrigger();
+		},
 		init: function() {
 			fixEl('.js-topbar');
+			N.mobileNav();
 		}
 	}
 

@@ -1,4 +1,5 @@
 .c-topbar {
+	position: relative;
 	z-index: 20;
 	width: 100%;
 	height: 90px;
@@ -24,6 +25,12 @@
 		.fixed & {
 			position: fixed;
 			left: 0; top: 0;
+			border-bottom: 1px solid $gray--brightest;
 		}
 	}
+	
+	@media screen and ( max-width: 480px ) {
+		height: 60px;
+	}
+	
 }

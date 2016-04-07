@@ -46,6 +46,7 @@
 	h4 {
 		position: relative;
 		margin-bottom: 1em;
+		line-height: 1.2;
 		font: {
 			size: em(25);
 			weight: $black;
@@ -61,5 +62,38 @@
 			background-color: $blue;
 			content: ' ';
 		}
-	}	
+	}
+	
+	@media screen and ( max-width: $grid-base-width+px ) {
+		margin-bottom: 60px;
+	}
+
+	@media screen and ( max-width: 1320px ) {
+		width: 100%;
+		
+		&__block {
+			width: grid(440, 1320);
+		}
+		
+		&__content {
+			width: 100%;
+		}
+	}
+	
+	@media screen and ( max-width: 768px ) {
+	
+		&__block {
+			float: none;
+			width: 100%;
+		}
+		
+		&__content {
+			min-height: inherit;
+			padding: 25px grid(50, 768) 25px grid(80, 768);
+		}
+	}
+	
+	@media screen and ( max-width: 480px ) {
+		margin-bottom: 10px;
+	}
 }
