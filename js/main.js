@@ -21,8 +21,22 @@ jQuery(function($) {
 
 	function fixEl(el) {
 		var pos = $(el).position(), b = $('body');
-		$(window).on('scroll', function() {
+		function init() {
 			b.scrollTop() >= pos.top ? b.addClass('fixed') : b.removeClass('fixed');
+		}
+		$(window).on('scroll', function() {
+			init();
+		});
+		init();
+	}
+	
+	function goToTarget(target) {
+		var v = $('html, body'), o = $(target).offset().top, buffer = $('.c-topbar').height();
+		v.animate({
+			scrollTop: o - buffer - 50
+		}, {
+			duration: 1500,
+			easing: 'easeOutCubic'
 		});
 	}
 	
@@ -96,6 +110,13 @@ jQuery(function($) {
 	};
 
 	var N = {
+		goTo: function() {
+			var o = $('.js-goto');
+			o.on('click', function(e) {
+				e.preventDefault();
+				goToTarget($(this).attr('href'));
+			});
+		},
 		mobileNav: function() {
 			function shTrigger() {
 				var t = $('.c-nav-trigger'),
@@ -131,6 +152,7 @@ jQuery(function($) {
 			shTrigger();
 		},
 		init: function() {
+			exist('.js-goto') && N.goTo();
 			fixEl('.js-topbar');
 			N.mobileNav();
 		}
