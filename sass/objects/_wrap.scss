@@ -4,4 +4,9 @@
 	z-index: 5;
 	max-width: $grid-base-width + px;
 	margin: 0 auto;
+	
+	&--wide {
+		max-width: 1440px;
+		background-color: white;
+	}
 }

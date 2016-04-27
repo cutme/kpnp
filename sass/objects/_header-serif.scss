@@ -1,17 +1,34 @@
 .o-header-serif {
-	margin-bottom: 1em;
+	@include antialias;
 	font: {
-		family: $abril;
-		size: em(40);
+		family: $abril !important;
+		weight: normal !important;
 	}
-	line-height: 1.2;
+	line-height: 1.1;
 	
-	&--center {
-		text-align: center;
-		font-size: em(36);
+	.c-reviews & {
+		background-color: $blue;
+		color: white;
+		
+		@media screen and ( min-width: 1001px ) {
+			position: absolute;
+			left: 0;  top: 0;
+			width: 405px;
+			height: 100%;
+			padding: 145px 0 0 80px;			
+		}
+		
+		@media screen and ( max-width: 1000px ) {
+			padding: 60px 0 60px 80px;
+		}
+		
+		@media screen and ( max-width: 768px ) {
+			padding: 60px 0 60px 40px;
+		}
 	}
 	
-	@media screen and ( max-width: 480px ) {
-		font-size: em(32);
+	.no-carousel & {
+		height: 500px;
 	}
 }
+

@@ -1,0 +1,11 @@
+.c-share {
+	margin-bottom: 50px;
+	
+	&__content {
+		float: left;
+	}
+	
+	.c-blog & {
+		margin-bottom: 30px;
+	}
+}

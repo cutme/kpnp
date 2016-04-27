@@ -64,10 +64,6 @@
 		}
 	}
 	
-	@media screen and ( max-width: $grid-base-width+px ) {
-		margin-bottom: 60px;
-	}
-
 	@media screen and ( max-width: 1320px ) {
 		width: 100%;
 		
@@ -78,6 +74,10 @@
 		&__content {
 			width: 100%;
 		}
+	}
+
+	@media screen and ( max-width: $grid-base-width+px ) {
+		margin-bottom: 60px;
 	}
 	
 	@media screen and ( max-width: 768px ) {

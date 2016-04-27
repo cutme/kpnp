@@ -15,25 +15,55 @@
 		padding: 0 15px;
 		font-size: em(20);
 		color: $blue;
+		
+		&:hover {
+			color: black;
+
+			.c-topbar & {
+				color: white;
+			}
+		}
+		
+		.c-follow & {
+			display: block;
+			width: 40px; height: 40px;
+			border: 1px solid $blue;
+			padding: 0;
+			line-height: 40px;
+			text-align: center;
+			
+			&:hover {
+				background-color: $blue;
+				color: white;
+			}
+		}
 	}
 	
 	li {
 		float: left;
-		border-right: 1px solid $blue;		
-
-		&:first-child {
-			.c-footer & {
-				a {
-					padding-left: 0;
-				}
-			}
-		}
+		border-right: 1px solid $blue;
 
 		&:last-child {
 			border: none;
 
 			a {
 				padding-right: 0;
+			}
+		}
+		
+		.c-footer & {
+			&:first-child {
+				a {
+					padding-left: 0;
+				}
+			}
+		}
+		
+		.c-follow & {
+			border: none;
+			
+			&:first-child {
+				margin-right: 20px;
 			}
 		}
 	}

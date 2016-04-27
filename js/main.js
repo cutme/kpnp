@@ -33,7 +33,7 @@ jQuery(function($) {
 	function goToTarget(target) {
 		var v = $('html, body'), o = $(target).offset().top, buffer = $('.c-topbar').height();
 		v.animate({
-			scrollTop: o - buffer - 50
+			scrollTop: o - buffer + 2
 		}, {
 			duration: 1500,
 			easing: 'easeOutCubic'

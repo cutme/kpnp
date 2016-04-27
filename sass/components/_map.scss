@@ -6,6 +6,20 @@
 		repeat: no-repat;
 		position: center;
 	}
-	margin-bottom: 80px;
+	
+	&--full {
+		height: auto;
+	}
 }
 
+.c-map-bg {
+	@include background-size(cover);
+	position: absolute;
+	left: 0; top: 0; z-index: 1;
+	width: 100%; min-height: 100%;
+	background: {
+		image: url(../img/map--big.png);
+		repeat: no-repat;
+		position: center;
+	}
+}

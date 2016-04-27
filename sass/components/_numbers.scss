@@ -1,8 +1,25 @@
 .c-numbers {
+	width: 100%;
+	overflow: hidden;
 	margin-bottom: 60px;
-	
+
 	&__content {
 		width: 580px;
+		position: relative;		
+	}
+	
+	&--border {
+		.c-numbers__content {
+			&:before {
+				position: absolute;
+				top: 0; left: 0;
+				display: block;
+				width: 200%;
+				height: 1px;
+				background-color: #ccc;
+				content: ' ';
+			}
+		}
 	}
 
 	&__box {

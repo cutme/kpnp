@@ -1,36 +1,86 @@
 .c-form {
-	margin-bottom: 60px;
+	position: relative;
 
 	&__fields {
 		margin-bottom: 40px;
 	}
 
-	input[type=text],
-	input[type=email],
+	input,
 	textarea {
 		padding: 20px 15px;
 		border-bottom: 1px solid $gray--brightest;
-		font-size: em(16);
+	}
+	
+	aside & {
+		margin-bottom: 60px;
+		
+		input {
+			padding: 20px 30px;
+			font-size: em(18);
+		}
+		
+		@include input-placeholder {
+			color: rgba(black, .5);
+		}
 	}
 
 	&--contact {
 		margin-bottom: 60px;
+		
+		button[type=submit] {
+			padding-left: 110px;
+	
+			&:before {
+				position: absolute;
+				left: 0; top: 0;
+				display: block;
+				width: 70px; height: 70px;
+				background-color: $blue;
+				font-family: $icons;
+				line-height: 70px;
+				text-align: center;
+				color: white;
+				content: "\e903";
+			}
+		}
+
+		@include input-placeholder {
+			color: black;
+		}
+		
+		.c-contact & {
+			margin-bottom: 0;
+			padding: {
+				top: 60px;
+				bottom: 60px;
+			}
+		}
 	}
 	
-	button[type=submit] {
-		padding-left: 110px;
+	&--newsletter {
+		input {
+			margin-bottom: 20px;
+		}
+		
+		.o-header-sansserif {
+			margin-bottom: 10px;
+			padding-left: 30px;
+			font-size: em(18);
+			color: $blue;
+		}
+	}
 
-		&:before {
-			position: absolute;
-			left: 0; top: 0;
-			display: block;
-			width: 70px; height: 70px;
-			background-color: $blue;
-			font-family: $icons;
-			line-height: 70px;
-			text-align: center;
-			color: white;
-			content: "\e903";
+	&--search {		
+		button[type=submit] {
+		    position: absolute;
+		    top: 20px;
+		    right: 15px;
+		    font-size: 22px;
+		    color: $blue;
+		    
+		    &:hover {
+			    color: $color-black;
+		    }
 		}
 	}
 	
@@ -50,14 +100,9 @@
 			}
 		}
 	}
-	
-		
+
 	textarea {
 		padding-bottom: 5px;
-	}
-	
-	@include input-placeholder {
-		color: black;
 	}
 	
 	@media screen and ( max-width: $grid-base-width+px ) {
@@ -74,4 +119,18 @@
 		}
 	}
 	
+	.c-article & {
+		margin-bottom: 130px;
+
+		.o-header-serif {
+			margin-bottom: 70px;
+			text-transform: uppercase;
+			font: {
+				family: $lato;
+				size: em(18);
+				weight: $bold;
+			}
+			color: $blue;
+		}
+	}
 }

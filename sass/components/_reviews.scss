@@ -4,6 +4,11 @@
 		top: 1px solid $gray--brightest;
 		bottom: 1px solid $gray--brightest;
 	}
+	
+	&.no-carousel {
+		margin-bottom: 50px;
+		border-bottom: none;
+	}
 
 	&__content {
 		min-height: 500px;
@@ -15,6 +20,14 @@
 	
 	&__item {
 		padding: 0 70px;
+		
+		.no-carousel & {
+			margin-bottom: 100px;
+			
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
 	}
 	
 	&__author {
@@ -51,20 +64,7 @@
 			color: $blue--brighter;
 		}
 	}
-	
-	.o-header-serif {
-		background-color: $blue;
-		color: white;
-		
-		@media screen and ( min-width: 1001px ) {
-			position: absolute;
-			left: 0;  top: 0;
-			width: 405px;
-			height: 100%;
-			padding: 145px 0 0 80px;
-		}
-	}
-	
+
 	blockquote {
 		p {
 			line-height: 1.7;
@@ -77,9 +77,6 @@
 	}
 	
 	@media screen and ( max-width: 1000px ) {
-		.o-header-serif {
-			padding: 60px 0 60px 80px;
-		}
 		
 		&__items {
 			padding: 40px 80px 60px 80px;
@@ -91,10 +88,7 @@
 	}
 	
 	@media screen and ( max-width: 768px ) {
-		.o-header-serif {
-			padding: 60px 0 60px 40px;
-		}
-		
+
 		&__items {
 			padding: 40px 80px 60px 40px;
 		}

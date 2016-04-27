@@ -1,0 +1,42 @@
+.c-author {
+	font-size: 14px;
+
+	&__name {
+		display: block;
+		margin-bottom: 2px;
+		text-transform: uppercase;
+		font-weight: $black;
+ 		color: $blue;
+	}
+	
+	.o-media {
+		float: left;
+		margin-right: 25px;
+	}
+	
+	&__details {
+		li {
+			float: left;
+			text-transform: uppercase;
+			color: #a2a2a2;
+			
+			&:after {
+				padding-right: 5px;
+				content: ' // ';
+			}
+			
+			&:last-child {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	a {
+		&:hover {
+			text-decoration: underline;
+			color: $blue;
+		}
+	}
+}

@@ -1,0 +1,10 @@
+.c-follow {	
+	&__title {
+		float: left;
+		font: {
+			family: $lato;
+			size: em(18);
+		}
+		line-height: 40px;
+	}
+}

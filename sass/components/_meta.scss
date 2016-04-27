@@ -1,0 +1,50 @@
+.c-meta {
+	margin-bottom: 40px;
+	text-transform: uppercase;
+	font: {
+		size: em(14);
+	}
+	
+	&__item {
+		margin-bottom: 15px;
+	}
+	
+	&--category {
+		margin-bottom: 15px;
+	}
+	
+	&--link {
+		color: $blue;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&--selected {
+		background-color: $blue;
+		font-weight: $regular;
+		padding: 0 5px 1px 5px;
+		color: white;
+		
+		&:hover {
+			background-color: $color-black;
+		}
+	}
+	
+	&--date,
+	&--comments {
+		color: #a2a2a2;
+	}
+	
+	&--date {
+		&:before,
+		&:after {
+			content: ' // ';
+		}
+	}
+	
+	strong {
+		font-weight: $black;
+	}
+}

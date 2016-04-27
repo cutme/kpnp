@@ -1,0 +1,54 @@
+.c-nav-secondary {
+	@include box-shadow( rgba(black, .1) 0 0 34px );
+	position: relative; 
+	left: -70px;
+	top: -40px;
+	z-index: 5;
+	float: left;
+	width: 375px;
+	background-color: white;
+	text-transform: uppercase;
+	color: #aeaeae;
+	padding: 50px 25px;
+
+	a {
+		display: block;
+		padding: 5px 0 5px 40px;
+		border-left: 3px solid transparent;
+		font-size: em(20);
+	}
+	
+	li {
+		padding: 5px 0;
+	}
+	
+	.current-menu-ancestor > a {
+		color: $black--brightest;
+	}
+
+	> ul > li {
+		font-weight: $black;
+		
+		> ul {
+			padding-left: 20px;
+
+			> li {
+				font-weight: $bold;
+			}
+		}
+	}
+	
+	.current-menu-item {
+		color: $blue;
+		
+		a {
+			border-color: $blue;
+		}
+	}
+	
+	a {
+		&:hover {
+			color: $blue;
+		}
+	}
+}

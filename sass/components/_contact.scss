@@ -1,0 +1,55 @@
+.c-contact {
+	position: relative;
+	padding-bottom: 60px;
+
+	&__details {
+		position: relative; z-index: 5;
+		top: -40px; right: -135px;
+		float: right;
+		width: 720px;
+		background-color: white;
+		padding: 100px 110px;
+		
+		p {
+			margin-bottom: 4em !important;
+		}
+		
+		a {
+			color: $blue;
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	&__parking {
+		i {
+			@include border-radius;
+			float: left;
+			width: 46px; height: 55px;
+			background-color: $blue;
+			margin-right: 20px;
+			line-height: 55px;
+			text: {
+				align: center;
+				transform: uppercase;
+			}
+			font: {
+				family: $lato;
+				size: em(40);
+				weight: $black;
+			}
+			color: white;
+		}
+
+		span {
+			display: block;
+			padding-top: 6px;
+			text-decoration: underline;
+			font-size: em(15);
+			line-height: 1.3;
+			color: $blue;
+		}
+	}
+}

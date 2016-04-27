@@ -1,0 +1,23 @@
+.c-news {
+	padding-right: 80px;
+	
+	&__item {
+		margin-bottom: 40px;
+
+		header {
+			margin-bottom: 40px;
+		}
+
+		h4 {
+			font-weight: $black;
+			color: #18191b;
+		}
+	}
+	
+	p {
+		margin-bottom: 1em;
+		line-height: 1.5;
+		font-family: $georgia;
+		color: $gray--brighter2;
+	}
+}

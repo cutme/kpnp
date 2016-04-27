@@ -1,0 +1,52 @@
+.c-publications {
+
+	&__item {
+		display: block;
+		position: relative;
+		width: 154px;
+		background-image: url(../img/doc--middle.png);
+		margin: 0 auto 45px auto;
+		padding: 52px 0 58px 0;
+		text-align: center;
+		color: white;
+		
+		&:before,
+		&:after {
+			position: absolute;
+			left: 0;
+			display: block;
+			width: 100%;
+			content: ' ';
+		}
+		
+		&:before {
+			top: 0;
+			height: 52px;
+			background-image: url(../img/doc--top.png);
+		}
+		
+		&:after {
+			bottom: 0;
+			height: 58px;
+			background-image: url(../img/doc--bottom.png);
+		}	
+		
+		&:hover {
+			text-decoration: none !important;
+		}	
+	}
+	
+	&__lead {
+		display: block;
+		margin-bottom: 50px;
+	}
+	
+	&__title {
+		display: block;
+		line-height: 1.3;
+		font: {
+			family: $lato;
+			weight: $bold;
+		}
+	}
+}

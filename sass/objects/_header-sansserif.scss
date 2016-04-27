@@ -1,0 +1,25 @@
+.o-header-sansserif {
+	@include antialias;
+	display: block;
+	margin-bottom: 30px;
+	line-height: 1.2;
+	font: {
+		family: $lato !important;
+		weight: $black;
+	}
+
+	h2 {
+		font-size: em(30);
+	}
+	
+	h3 {
+		font-size: em(21);
+	}
+
+	.o-sidebar & {
+		padding-left: 30px;
+		font-size: em(27);
+		color: $blue;
+	}
+}
+

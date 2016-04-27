@@ -1,0 +1,21 @@
+.c-team {
+	&__item {
+		float: left;
+		width: 195px;
+		margin-right: 100px;
+		
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+		
+		a {
+			text-decoration: underline;
+			color: #9d9d9d;
+			
+			&:hover {
+				text-decoration: none;
+				color: $blue;
+			}
+		}
+	}
+}

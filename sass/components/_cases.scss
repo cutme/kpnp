@@ -1,0 +1,46 @@
+.c-cases {
+	margin-bottom: 160px;
+
+	&__content {
+		padding: 50px 120px 0 390px;
+	}
+	
+	&__item {
+		position: relative;
+		min-height: 160px;
+		background-color: white;
+		margin-bottom: 70px;
+		
+		&--black,
+		&--blue {
+			color: white;
+		}
+		
+		&--black {
+			.o-header-sansserif {
+				background-color: $color-black;
+			}
+		}
+		
+		&--blue {
+			.o-header-sansserif {
+				background-color: $blue;
+			}
+		}			
+	}
+	
+	.o-header-sansserif {
+		position: absolute;
+		left: 0; top: 0;
+		width: 360px; height: 100%;
+		padding: 50px;
+	}
+	
+	.o-btn {
+		margin-bottom: -35px;
+	}
+	
+	p {
+		margin: 0;
+	}
+}

@@ -2,12 +2,16 @@
 	@include icomoon;
 }
 
-.align-center {
-	text-align: center;
+.text-blue {
+	color: $blue;
 }
 
 .fixed {
 	padding-top: 90px;
+}
+	
+.owl-carousel {
+	display: none;
 }
 
 .safari {

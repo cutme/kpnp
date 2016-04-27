@@ -1,3 +1,39 @@
+.u-align-center {
+	text-align: center;
+}
+
+.u-align-justify {
+	@include flexbox;
+	@include justify-content(space-between);
+}
+
+.u-appointment-link {
+	display: inline-block;
+	border-bottom: 2px solid $blue;
+	padding: 0 10px 5px 10px;
+	text-transform: uppercase;
+	font: {
+		size: em(18);
+		weight: $bold;
+	}
+	
+	&:hover {
+		color: $blue;
+	}
+}
+
+.u-noborder {
+	border: none;
+}
+
+.u-offset {
+	margin-bottom: 50px;
+}
+
+.u-text-upper {
+	text-transform: uppercase;
+}
+
 .u-toedge {
 	&:before {
 		position: absolute;
@@ -11,18 +47,45 @@
 	&--left {
 		left: 0;
 	}
+	
+	&.no-carousel {
+		&:before {
+			height: 500px;
+		}
+	}
+}
+
+.u-pull-right {
+	float: right;
+}
+
+.u-pull-left {
+	float: left;
+}
+
+.u-posx {
+	@include scut-center-transform(x);
 }
 
 .u-posy {
 	@include scut-center-transform(y);
 }
 
-.u-shadow--down {
+.u-shadow {
+	@include box-shadow( rgba(black, .15) 0 0 50px );
+}
+
+.u-shadow--down-inset {
 	@include box-shadow( rgba(black, .07) 0 -10px 16px inset );
 }
 
-.u-shadow--up-down {
-	@include box-shadow(  rgba(black, .07) 0 -10px 16px inset, rgba(black, .07) 0 10px 16px inset );
+.u-shadow--up {
+	@include box-shadow(  rgba(black, .07) 0 -10px 16px );
+	padding-top: 80px;
+}
+
+.u-shadow--up-inset {
+	@include box-shadow(  rgba(black, .07) 0 10px 16px inset );
 }
 
 .u-smooth {

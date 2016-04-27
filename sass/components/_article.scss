@@ -1,0 +1,53 @@
+.c-article {
+	width: 700px;
+	padding-left: 15px;
+	
+	&__content {
+		margin-bottom: 70px;
+	}
+
+	&__photo {
+		margin-bottom: 50px;
+		margin-left: -15px;
+		
+		.c-blog & {
+			position: relative;
+			height: 260px;
+			overflow: hidden;
+			
+			.o-media {
+				@include transform(translate(-50%, -50%));
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	
+	&__footer {
+		margin-bottom: 120px;
+		padding: 55px 0;
+		border: {
+			top: 1px solid #d5d5d5;
+			bottom: 1px solid #d5d5d5;
+		}
+	}
+	
+	&__read {
+		float: right;
+		margin-top: 5px;
+		font-size: em(20);
+		color: $blue;
+		
+		&:hover {
+			color: $color-black;
+		}
+		
+		&:after {
+			content: ' >';
+		}
+	}
+}
+

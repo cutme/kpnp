@@ -1,0 +1,9 @@
+.c-sidebox {
+	margin-bottom: 25px;
+	padding: 0 15px 25px 30px;
+	border-bottom: 1px solid $gray--brightest;
+	
+	.c-publications & {
+		margin-bottom: 50px;
+	}
+}

@@ -1,0 +1,78 @@
+.c-profile {
+	font-family: $lato;
+	
+	figcaption {
+		margin-bottom: 50px;
+		padding: 35px 0 0 20px;
+		border-left: 1px solid rgba(black, .1);
+		
+		.c-team & {
+			padding-bottom: 30px;
+		}
+	}
+	
+	figure {
+		li {
+			position: relative;
+			font-size: em(14);
+		}
+	}
+
+	strong {
+		position: relative;
+		line-height: 1.3;
+		font: {
+			family: $georgia;
+			size: em(18, 14);
+		}		
+	}
+	
+	&__buttons {
+		margin-bottom: 50px;
+
+		li {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__firstname,
+	&__lastname {
+		&:before {
+			position: absolute;
+			left: -20px; top: 0;
+			display: block;
+			width: 3px; height: 100%;
+			background-color: $blue;
+			content: ' ';
+		}
+	}
+	
+	&__lastname {
+		margin-bottom: 5px;
+	}
+	
+	&__position {
+		display: block;
+		margin-bottom: 50px;
+		font-weight: $bold;
+	}
+	
+	&__spec {
+		li {
+			text-decoration: underline;
+			font-size: em(20);
+		}
+	}
+	
+	.o-header-sansserif {
+		padding-left: 0;
+	}
+	
+	.o-btn {
+		display: block;
+	}
+	
+	.o-sidebar & {
+		padding-right: 80px;
+	}
+}
