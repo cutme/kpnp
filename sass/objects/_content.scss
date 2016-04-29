@@ -1,8 +1,16 @@
 .o-content {
-	width: 765px;
+	position: relative;
+	z-index: 1;
+	width: grid($o-content);
 	padding: 80px 0;
 	
 	&--wide {
-		width: 795px;
+		width: grid($o-content--wide);
+	}
+	
+	@media screen and ( max-width: 800px ) {
+		float: none !important;
+		width: 100%;
+		padding: 0 20px;
 	}
 }

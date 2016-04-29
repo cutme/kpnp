@@ -151,8 +151,75 @@ jQuery(function($) {
 			}
 			shTrigger();
 		},
+		navSelect: function() {
+			var mainNav = $('.c-nav-secondary'),
+				status = false;
+
+			function init() {
+				$('<select />').appendTo(mainNav);
+	
+		        var navSelect = mainNav.find('select');
+	
+				$('<option />', {
+					'selected': 'selected',
+					'value'   : '',
+					'text'    : 'Go to...'
+				}).appendTo(navSelect);
+	
+				mainNav.find("ul > li").each(function() {
+					var parent = $('> a', this);
+					
+					depthChar = '',
+					i = 0;
+
+					$("<option />", {
+						"value": parent.attr("href"),
+						"text": depthChar + parent.text()
+					}).appendTo(navSelect);
+					
+					
+					parent.parent().find('.sub-menu > li').each(function() {
+						var child = $('> a', this);
+						
+						depthChar = '- ';
+						
+						$("<option />", {
+							"value": child.attr("href"),
+							"text": depthChar + child.text()
+						}).appendTo(navSelect);
+						
+					});				
+				});	
+
+				$('select').niceSelect();
+	
+			    navSelect.change(function() {
+					window.location = $(this).find('option:selected').val();
+				});
+				
+				status = true;
+			}
+
+			$(window).resize(debouncer(function(e) {
+				if (window_smaller_than(800)) {
+					if (status === false) {
+						init();
+					}
+				} else {
+					if (status === true) {
+						//mainNav.find('select').remove();
+						//status = false;
+					}
+				}
+			}));
+
+			window_smaller_than(800) === true && init();
+			
+			
+		},
 		init: function() {
 			exist('.js-goto') && N.goTo();
+			exist('.c-nav-secondary') && N.navSelect();
 			fixEl('.js-topbar');
 			N.mobileNav();
 		}

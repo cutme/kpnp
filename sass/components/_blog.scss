@@ -3,4 +3,9 @@
 		border-bottom: 1px solid #ccc;
 		margin-bottom: 50px;
 	}
+	
+	@media screen and ( max-width: 800px ) {
+		padding-top: 80px;
+	}
+	
 }

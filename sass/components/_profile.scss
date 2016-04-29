@@ -71,8 +71,16 @@
 	.o-btn {
 		display: block;
 	}
-	
+
 	.o-sidebar & {
-		padding-right: 80px;
+		@media screen and ( min-width: 801px ) {
+			padding-right: 80px;
+		}
+		
+		figure {
+			width: 195px;
+			margin: 0 auto;
+			text-align: left;
+		}
 	}
 }

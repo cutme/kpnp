@@ -4,5 +4,10 @@
 	.o-btn {
 		width: 210px;
 		text-align: center;
+		
+		@media screen and ( max-width: 479px ) {
+			width: 140px;
+			padding: 0;
+		}
 	}
 }

@@ -11,6 +11,9 @@
 		h4 {
 			font-weight: $black;
 			color: #18191b;
+			
+			
+			
 		}
 	}
 	
@@ -19,5 +22,15 @@
 		line-height: 1.5;
 		font-family: $georgia;
 		color: $gray--brighter2;
+	}
+	
+	@media screen and ( max-width: 800px ) {
+		padding-right: 0;
+	}
+	
+	@media screen and ( max-width: 480px ) {
+		h4 {
+			font-size: em(24);
+		}
 	}
 }

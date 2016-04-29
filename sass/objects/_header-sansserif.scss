@@ -21,5 +21,22 @@
 		font-size: em(27);
 		color: $blue;
 	}
+	
+	.c-cases & {
+		padding: 25px 20px;
+
+		@media screen and ( min-width: 641px ) {
+			position: absolute;
+			left: 0; top: 0;
+			width: grid(360); height: 100%;
+			padding: 50px grid(50);
+		}
+		
+		@media screen and ( max-width: 640px ) {
+			h3 {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 

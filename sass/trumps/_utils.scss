@@ -3,8 +3,17 @@
 }
 
 .u-align-justify {
-	@include flexbox;
-	@include justify-content(space-between);
+	@media screen and ( min-width: 641px ) {
+		@include flexbox;
+		@include justify-content(space-between);
+	}
+	
+	.o-btn {
+		@media screen and ( max-width: 640px ) {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
 }
 
 .u-appointment-link {

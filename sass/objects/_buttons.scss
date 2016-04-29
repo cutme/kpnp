@@ -44,5 +44,9 @@
 		float: right;
 		line-height: 70px;
 		font-size: 16px;
+		
+		@media screen and ( max-width: $grid-base-width+px ) {
+			display: none;
+		}
 	}
 }

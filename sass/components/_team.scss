@@ -1,8 +1,8 @@
 .c-team {
 	&__item {
 		float: left;
-		width: 195px;
-		margin-right: 100px;
+		width: grid(195, $o-content--wide);
+		margin-right: grid(100, $o-content--wide);
 		
 		&:nth-child(3n) {
 			margin-right: 0;
@@ -15,6 +15,22 @@
 			&:hover {
 				text-decoration: none;
 				color: $blue;
+			}
+		}		
+	}
+	
+	@media screen and ( max-width: 640px ) {
+
+		&__item {
+			width: 49%;
+			margin-right: 0;
+			
+			.o-media {
+				width: 100%;
+			}
+			
+			&:nth-child(even) {
+				float: right;
 			}
 		}
 	}

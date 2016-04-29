@@ -1,8 +1,16 @@
 .o-sidebar {
-	width: 375px;
+	width: grid(375);
 	padding: 80px 0;
 	
 	&--wide {
-		width: 405px;
+		width: grid(405);
+	}
+	
+	@media screen and ( max-width: 800px ) {
+		float: none !important;
+		width: 100%;
+		padding: 40px 20px 0 20px;
+		text-align: center;
+		margin-bottom: 80px;
 	}
 }

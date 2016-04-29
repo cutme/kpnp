@@ -5,6 +5,13 @@
 		weight: normal !important;
 	}
 	line-height: 1.1;
+
+	.c-numbers & {
+		@media screen and ( max-width: 1000px ) {
+			margin-bottom: 0 !important;
+			text-align: center;
+		}
+	}
 	
 	.c-reviews & {
 		background-color: $blue;
@@ -27,8 +34,17 @@
 		}
 	}
 	
-	.no-carousel & {
-		height: 500px;
+	@media screen and ( min-width: 1001px ) {
+		.no-carousel & {
+			height: 500px;
+		}
+	}
+	
+	@media screen and ( max-width: 1170px ) {
+		.c-cases &,
+		.c-numbers & {
+			padding: 0 20px;
+		}
 	}
 }
 

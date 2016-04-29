@@ -1,5 +1,5 @@
 .c-article {
-	width: 700px;
+	width: grid(700, $o-content);
 	padding-left: 15px;
 	
 	&__content {
@@ -49,5 +49,11 @@
 			content: ' >';
 		}
 	}
+	
+	@media screen and ( max-width: 800px ) {
+		width: 100%;
+		padding: 0;
+	}
+	
 }
 

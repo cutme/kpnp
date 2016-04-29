@@ -5,9 +5,13 @@
 	
 	blockquote {
 		position: relative;
-		padding: 40px 165px 80px 165px;
+		padding: 40px grid(165, $o-content) 80px grid(165, $o-content);
 		font-style: italic;
-
+		
+		@media screen and ( max-width: 480px ) {
+			padding: 40px 20px 80px 20px;
+		}
+	
 		&:before {
 			@include opacity(.2);
 			position: absolute;
@@ -23,8 +27,8 @@
 
 		&:after {
 			position: absolute;
-		    right: 100px;
-		    bottom: -30px;
+		    right: grid(100, $o-content);
+		    bottom: -40px;
 			display: block;
 			font-size: 191px;
 			content: '“';

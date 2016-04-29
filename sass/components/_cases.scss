@@ -2,9 +2,9 @@
 	margin-bottom: 160px;
 
 	&__content {
-		padding: 50px 120px 0 390px;
+		padding: 0 20px;
 	}
-	
+
 	&__item {
 		position: relative;
 		min-height: 160px;
@@ -28,14 +28,7 @@
 			}
 		}			
 	}
-	
-	.o-header-sansserif {
-		position: absolute;
-		left: 0; top: 0;
-		width: 360px; height: 100%;
-		padding: 50px;
-	}
-	
+
 	.o-btn {
 		margin-bottom: -35px;
 	}
@@ -43,4 +36,12 @@
 	p {
 		margin: 0;
 	}
+	
+	@media screen and ( min-width: 641px ) {
+		&__content {
+			padding: 50px grid(120) 0 grid(390);
+		}
+	}
+	
+	
 }

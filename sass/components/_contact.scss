@@ -4,11 +4,11 @@
 
 	&__details {
 		position: relative; z-index: 5;
-		top: -40px; right: -135px;
+		top: -40px; right: - grid(135);
 		float: right;
 		width: 720px;
 		background-color: white;
-		padding: 100px 110px;
+		padding: 100px grid(110);
 		
 		p {
 			margin-bottom: 4em !important;
@@ -21,6 +21,16 @@
 				text-decoration: underline;
 			}
 		}
+		
+		@media screen and ( max-width: 1440px ) {
+			right: 0;
+		}
+		
+		@media screen and ( max-width: 720px ) {
+			float: none;
+			width: 100%;
+		}
+		
 	}
 	
 	&__parking {
