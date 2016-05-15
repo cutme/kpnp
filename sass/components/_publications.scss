@@ -41,8 +41,21 @@
 		margin-bottom: 50px;
 	}
 	
+	&__logo {
+		@include background-size(contain);
+		display: block;
+		position: relative; z-index: 10;
+		width: 70px; height: 18px;
+		background: {
+			image: url(../img/kpnp-simple--white.svg);
+			repeat: no-repeat;
+		}
+		margin: 0 auto -18px auto;
+	}
+	
 	&__title {
 		display: block;
+		margin-bottom: 25px;
 		line-height: 1.3;
 		font: {
 			family: $lato;

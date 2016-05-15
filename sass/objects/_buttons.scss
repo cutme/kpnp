@@ -19,10 +19,20 @@
 			background-color: $blue;
 			color: white;
 		}
+		
+		i {
+			color: white;
+		}
 	}
 	
 	&:active {
 		@include box-shadow( rgba(black, .2) 0 0 34px );
+	}
+	
+	i {
+		@include hover;
+		margin-left: 10px;
+		color: $blue;
 	}
 	
 	&--blue {

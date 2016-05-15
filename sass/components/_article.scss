@@ -39,10 +39,10 @@
 		float: right;
 		margin-top: 5px;
 		font-size: em(20);
-		color: $blue;
+		color: $color-black;
 		
 		&:hover {
-			color: $color-black;
+			color: $blue;
 		}
 		
 		&:after {

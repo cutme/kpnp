@@ -1,0 +1,92 @@
+.c-accordion {
+	&__lead {
+		position: relative;
+		font-size: em(26);
+		cursor: pointer;
+		
+		&:after {
+			@include hover;
+			@include icomoon;
+			position: relative;
+			display: inline-block;
+			margin-left: 20px;
+			content: "\e906";
+			color: $blue;
+			
+			.is-open & {
+				@include transform(rotate(90deg));
+			}
+		}		
+	}
+	
+	&__holder {
+		display: none;
+		padding: 80px 0;
+		
+		.is-open & {
+			display: block;
+		}
+	}
+	
+	&__text {
+		position: relative;
+		padding: 15px 0 15px 120px;		
+
+		&:after {
+			position: absolute;
+			top: 0; left: 60px;
+			width: 2px; height: 100%;
+			display: block;
+			background-color: $blue;
+			content: ' ';
+		}
+
+		p {
+			margin-bottom: 1.5em;
+			line-height: 1.5;
+			
+			&:last-of-type {
+				margin: 0;
+			}
+		}
+	}
+	
+	@media screen and ( max-width: 940px ) {
+		&__text {
+			padding: 15px 0 15px grid(120);
+			
+			&:after {
+				left: grid(60);
+			}
+		}
+	}
+	
+	@media screen and ( max-width: 768px ) {
+			&__lead {
+			font-size: em(20);
+		}
+		
+		&__holder {
+			padding: 40px 0;
+		}	
+	}
+	
+	@media screen and ( max-width: 540px ) {
+		&__item {
+			margin-bottom: 40px;
+		}
+
+		&__lead {
+			text-align: center;
+			font-size: em(18);
+			
+			&:after {
+				@include transform(rotate(90deg));
+				position: absolute;
+				left: 50%;
+				bottom: -20px;
+				margin-left: 0;
+			}
+		}	
+	}
+}

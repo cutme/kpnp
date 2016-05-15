@@ -1,0 +1,90 @@
+.c-clamp {
+	position: relative;
+	padding-bottom: 100px;
+	z-index: 1;	
+	
+	&__content {
+		width: 750px;
+		margin: 0 auto;
+		font-family: $georgia;
+	}
+	
+	&__num {
+		font-size: em(36, 26);
+		color: $blue;
+	}
+
+	&__header {
+		@include background-size(contain);
+		max-width: 1040px;
+		background: {
+			image: url(../img/clamp.svg);
+			repeat: no-repeat;
+			position: center bottom;
+		}
+		margin: 0 auto;
+		padding-bottom: 240px;
+		text-align: center;
+		
+		h3 {
+			line-height: 1;
+			font: {
+				size: em(86);
+				weight: $black;
+			}
+			color: $blue;
+		}
+	}
+	
+	.c-accordion {
+		margin-bottom: 100px;
+	}
+	
+	.o-wrap {
+		padding: {
+			left: 15px;
+			right: 15px;
+		}
+	}
+
+	@media screen and ( min-width: 1080px ) {
+		min-height: 1240px;
+		
+		&__content {
+			float: right;
+			height: 1000px;
+			padding-top: 130px;
+		}
+
+		&__header {
+			@include transform(rotate(-90deg));
+			position: absolute;
+			left: -300px;
+		    top: 300px;
+		    width: 1040px;
+		}
+	}
+	
+	@media screen and ( max-width: 940px ) {
+		
+		&__content {
+			width: auto;
+			max-width: 750px;
+		}
+
+		&__header {
+			padding-bottom: 0;
+			
+			&:after {
+				display: none;
+			}
+			
+			h3 {
+				font-size: 9vw;
+			}
+		}
+	}
+}
+
+
+
