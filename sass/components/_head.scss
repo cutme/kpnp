@@ -1,4 +1,6 @@
 .c-head {
+	@include background-size(cover);
+	background-position: center;
 	position: relative; z-index: 1;
 	height: 570px;
 	overflow: hidden;

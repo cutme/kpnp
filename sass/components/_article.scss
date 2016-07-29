@@ -3,12 +3,21 @@
 	padding-left: 15px;
 	
 	&__content {
-		margin-bottom: 70px;
+		margin-bottom: 50px;
+	}
+	
+	p > img,
+	> img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 50px;
+//		margin-left: -15px;
 	}
 
 	&__photo {
 		margin-bottom: 50px;
-		margin-left: -15px;
+		//margin-left: -15px;
 		
 		.c-blog & {
 			position: relative;
@@ -53,6 +62,16 @@
 	@media screen and ( max-width: 800px ) {
 		width: 100%;
 		padding: 0;
+		
+		p > img,
+		> img {
+			width: calc(100% + 30px);
+			margin: {
+				left: -15px;
+				right: -15px;
+			}
+			max-width: none;
+		}
 	}
 	
 }

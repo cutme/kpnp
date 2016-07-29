@@ -29,7 +29,7 @@ jQuery(function($) {
 		});
 		init();
 	}
-	
+
 	function goToTarget(target) {
 		var v = $('html, body'), o = $(target).offset().top, buffer = $('.c-topbar').height();
 		v.animate({
@@ -39,7 +39,7 @@ jQuery(function($) {
 			easing: 'easeOutCubic'
 		});
 	}
-	
+
 	function isScrolledIntoView(elem) {
 		var e = elem, 
 			w = $(window),
@@ -58,6 +58,8 @@ jQuery(function($) {
 	var L = {
 		accordion: function() {
 			var o = $('.js-accordion'), i = $('.c-accordion__item'), l = $('.c-accordion__lead'), h = '.c-accordion__holder', open = 'is-open';
+			
+			i.eq(0).addClass('is-open');
 
 			l.on('click', function() {
 				_t = $(this);
@@ -133,6 +135,105 @@ jQuery(function($) {
 			L.modernizrSupport();
 		}
 	};
+
+	var Map = function() {
+	
+		function initMap() {
+			var c = $('#map');
+			var lat = c.attr('data-lat');
+			var lng = c.attr('data-lng');
+		
+			var mapStyle =[ { "stylers": [ { "saturation": -100 }, { "lightness": 20 } ] } ];
+			
+			var myOptions = {
+				center: new google.maps.LatLng(lat,lng),
+				disableDefaultUI: true,
+				draggable: false,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				scrollwheel: false,
+				styles: mapStyle,
+				zoom: 18
+			}
+			
+			map = new google.maps.Map(document.getElementById("map"), myOptions);
+			
+			var updateCenter = function(){ $.data( map, 'center', map.getCenter() ); };
+
+			google.maps.event.addListener( map, 'dragend', updateCenter );
+			google.maps.event.addListener( map, 'zoom_changed', updateCenter );
+			//google.maps.event.addListenerOnce( map, 'idle', function(){ $container.addClass( 'is-loaded' ); });
+
+			function setCenter() {
+				map.setCenter( new google.maps.LatLng(lat,lng) );
+				
+				if ($('.c-contact').length>0) {
+					map.panBy(500, 260);
+				} else {
+					map.panBy(120, -60);
+				}
+			}
+			
+			setTimeout(setCenter, 1);
+
+			google.maps.event.addDomListener(window, 'resize', function() {
+               setTimeout(setCenter, 1);
+            });
+		}
+		
+		function setMarkers(locations) {
+		
+			var bounds = new google.maps.LatLngBounds();
+			
+			// for (var i = 0; i < locations.length; i++) {
+			
+			//var location = locations[i];
+			
+			var position = new google.maps.LatLng(50.375657,18.804776);
+			
+			var marker = new google.maps.Marker({
+				position: position,
+				map: map
+				// icon: location[2],
+			});
+		
+			//marker.set('id', i+1);
+			
+			bounds.extend(position);
+			
+			// }//end for
+			
+			//zmniejszamy przybliżenie
+			var minDistance = 0.00098;
+			var sumA = bounds.getNorthEast().lng() - bounds.getSouthWest().lng();
+			var sumB = bounds.getNorthEast().lat() - bounds.getSouthWest().lat();
+			
+			if ((sumA < minDistance && sumA > -minDistance) && (sumB < minDistance && sumB > -minDistance)) {
+				var extendPoint1 = new google.maps.LatLng(bounds.getNorthEast().lat() + minDistance, bounds.getNorthEast().lng() + minDistance);
+				var extendPoint2 = new google.maps.LatLng(bounds.getNorthEast().lat() - minDistance, bounds.getNorthEast().lng() - minDistance);
+				bounds.extend(extendPoint1);
+				bounds.extend(extendPoint2);
+			}
+			
+			//przesuwamy wszytko trochę w lewo
+			var extendPoint0 = new google.maps.LatLng(bounds.getNorthEast().lat(), bounds.getSouthWest().lng() + 0.004 );
+			bounds.extend(extendPoint0);
+			
+			//center map to markers
+			map.fitBounds(bounds);
+		
+		}
+   
+		$.getScript('https://www.google.com/jsapi', function()
+		{
+		    google.load('maps', '3',
+	    	{
+				callback: function() {
+					$('.c-map__loading').removeClass('u-blink');
+					initMap();							
+				}
+			});
+		});
+	}
 
 	var N = {
 		goTo: function() {
@@ -242,11 +343,33 @@ jQuery(function($) {
 			
 			
 		},
+		navTarget: function () {
+			var el = $('.c-nav-target'),
+				active = Cookies.get('kpnp_target');
+
+			if (active == 'undefined') {
+				$('li', el).eq(0).addClass('current-menu-item');
+			} else {
+				$('li', el).eq(active).addClass('current-menu-item');
+			}
+			
+			if (active == 1) {
+				$('body').addClass('individual');
+			} else {
+				$('body').addClass('entrepreneurs');
+			}
+			
+			$('li', el).on('click', function() {
+				var $i = $(this).index();
+				Cookies.set("kpnp_target", $i);
+			});
+		},
 		init: function() {
 			exist('.js-goto') && N.goTo();
 			exist('.c-nav-secondary') && N.navSelect();
 			fixEl('.js-topbar');
 			N.mobileNav();
+			N.navTarget();
 		}
 	}
 
@@ -259,7 +382,9 @@ jQuery(function($) {
 				_t.owlCarousel({
 					dots: true,
 					items: 1,
-					loop: true,		
+					loop: true,
+					nav: true,
+					navText: ['',''],
 					smartSpeed: 450
 				});
 			});
@@ -289,5 +414,7 @@ jQuery(function($) {
 		L.init();
 		N.init();
 		S.init();
+		
+		exist('#map') && Map();
 	});
 });

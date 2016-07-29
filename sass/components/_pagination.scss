@@ -1,9 +1,19 @@
 .c-pagination {
 	margin-bottom: 60px;
 
-	.o-btn {
+	a {
+		@include btn;
+		@include btn-blue;
 		width: 210px;
 		text-align: center;
+		
+		&:first-of-type {
+			float: left;
+		}
+		
+		&:last-of-type {
+			float: right;
+		}
 		
 		@media screen and ( max-width: 479px ) {
 			width: 140px;

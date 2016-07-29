@@ -1,0 +1,45 @@
+.c-specialists {
+	padding-top: 40px;
+	
+	h4 {
+		margin-bottom: 40px;
+		font: {
+			size: em(24);
+			weight: $bold;
+		}
+	}
+	
+	&__item {
+		display: table;
+		margin-bottom: 40px;
+	}
+	
+	&__name {
+		color: $blue !important;
+	}
+	
+	&__photo,
+	&__text {
+		display: table-cell;
+		vertical-align: top;
+		font-size: em(20);
+	}
+	
+	&__photo {
+		padding: {
+			right: 20px;
+			top: 5px;
+		}
+	}
+	
+	&__text {
+		vertical-align: top;
+		font-family: $lato;
+		color: $black--brightest;
+	}
+	
+	p {
+		margin: 0;
+		line-height: 1.3;
+	}
+}

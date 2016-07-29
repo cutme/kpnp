@@ -30,7 +30,27 @@
 		&:nth-child(2n+1) {
 			clear: left;
 		}
+		
+		&:nth-child(5n+1),
+		&:nth-child(5n+5) {	// black
+			background-color: $color-black;
+			color: white;
+		}
+		
+		&:nth-child(5n+2),
+		&:nth-child(5n+3) {	// white
+			p {
+				color: $gray--brighter;
+			}
+		}
+		
+		&:nth-child(5n+4) {	// black
+			background-color: $blue;
+			color: white;
+		}
+		
 
+/*
 		&--black {
 			background-color: $color-black;
 			color: white;
@@ -46,7 +66,8 @@
 				color: $gray--brighter;
 			}
 		}
-		
+*/
+
 		p {
 			font-family: $georgia;
 		}

@@ -3,6 +3,7 @@ head.js('https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
 	.js('https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
 	.js('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js')
 	.js('js/jquery.nice-select.min.js')
+	.js('https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.min.js')
 	.load('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css')
 	
 	.js('js/main.js');

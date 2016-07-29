@@ -4,7 +4,11 @@
 	background: {
 		image: url(../img/bg-triangle.png);
 		repeat: no-repeat;
-		position: center;
+		position: center bottom;
+	}
+	
+	.o-wrap {
+		position: static;
 	}
 
 	&__lead {

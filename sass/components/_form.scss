@@ -1,15 +1,20 @@
 .c-form {
 	position: relative;
-	z-index: 1;
+	z-index: 10;
 
 	&__fields {
 		margin-bottom: 40px;
 	}
 
-	input,
+	input[type=text],
+	input[type=email],
 	textarea {
 		padding: 20px 15px;
 		border-bottom: 1px solid $gray--brightest;
+		
+		&:focus {
+			border-bottom-color: $blue;
+		}
 	}
 	
 	aside & {
@@ -24,6 +29,8 @@
 			color: rgba(black, .5);
 		}
 	}
+	
+	
 
 	&--contact {
 		margin-bottom: 60px;
@@ -89,7 +96,8 @@
 		}
 	}
 	
-	label {
+	label,
+	p {
 		display: block;
 		float: left;
 		
@@ -104,6 +112,14 @@
 				margin: 0 grid(30);
 			}
 		}
+		
+		&.c-form__submit {
+			width: 100%;
+		}
+		
+		&.c-form__message {
+			margin-bottom: 60px;
+		}
 	}
 
 	textarea {
@@ -112,6 +128,12 @@
 	
 	@media screen and ( max-width: $grid-base-width+px ) {
 		padding: 0 15px;
+	}
+	
+	@media screen and ( max-width: 1024px ) {
+		.o-btn {
+		padding-right: 40px;
+		}
 	}
 	
 	@media screen and ( max-width: 640px ) {
@@ -124,7 +146,8 @@
 		}
 	}
 	
-	.c-article & {
+	//.c-article & {
+	.o-content & {
 		margin-bottom: 130px;
 
 		.o-header-serif {

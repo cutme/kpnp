@@ -12,11 +12,14 @@
 			font-weight: $black;
 			color: #18191b;
 			
-			
-			
+			a {
+				&:hover {
+					color: $blue !important;
+				}
+			}
 		}
 	}
-	
+
 	p {
 		margin-bottom: 1em;
 		line-height: 1.5;

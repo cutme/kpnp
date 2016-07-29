@@ -13,7 +13,7 @@
 		padding-left: 15px;
 		
 		&:nth-child(2n+1) {
-			clear: left;
+			//clear: left;
 		}
 		
 		&:before {
@@ -39,6 +39,10 @@
 	.c-nav-social {
 		float: right;
 		width: 165px;		
+	}
+	
+	.sub-menu {
+		display: none;
 	}
 	
 	@media screen and ( max-width: 768px ) {

@@ -10,21 +10,15 @@
 		min-height: 160px;
 		background-color: white;
 		margin-bottom: 70px;
+		color: white;
 		
-		&--black,
-		&--blue {
-			color: white;
+		.o-header-sansserif {
+			background-color: $blue;
 		}
-		
-		&--black {
+
+		&:nth-child(even) {
 			.o-header-sansserif {
 				background-color: $color-black;
-			}
-		}
-		
-		&--blue {
-			.o-header-sansserif {
-				background-color: $blue;
 			}
 		}			
 	}

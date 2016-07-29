@@ -33,6 +33,9 @@
 		li {
 			margin-bottom: 30px;
 		}
+		
+		
+		
 	}
 
 	&__firstname,
@@ -59,8 +62,14 @@
 	
 	&__spec {
 		li {
-			text-decoration: underline;
 			font-size: em(20);
+			
+			a {
+				&:hover {
+					text-decoration: none;
+					color: $blue;
+				}
+			}
 		}
 	}
 	

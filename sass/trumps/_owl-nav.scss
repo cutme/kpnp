@@ -1,0 +1,37 @@
+.owl-nav {
+	.owl-prev,
+	.owl-next {
+		@include hover;
+		position: absolute;
+		top: 50%;
+		display: block;
+		width: 58px; height: 114px;
+		background-image: url(../img/svg/arrow-big.svg);
+		margin-top: -57px;
+		z-index: 10;
+		
+		
+	}
+	
+	.owl-next {
+		right: 100px;
+		
+		&:hover {
+			@include transform(scaleY(.5));
+		}
+	}
+	
+	.owl-prev {
+		@include transform(scale(-1, 1));
+		left: 100px;
+		
+		&:hover {
+			@include transform(scale(-1, .5));
+		}
+	}
+	
+	.c-clients &,
+	.c-reviews & {
+		display: none !important;
+	}
+}

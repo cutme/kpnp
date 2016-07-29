@@ -1,0 +1,47 @@
+.c-cookies {
+	display: none;
+	position: fixed;
+	bottom: 0; z-index: 30;
+	max-width: 1170px;
+	background-color: $blue;
+	padding: 40px;
+	color: white;
+	
+	h4 {
+		margin-bottom: 20px;
+		font-size: 20px;
+		font-weight: $bold;
+	}
+	
+	p {
+		font-size: em(12);
+	}
+	
+	&__close {
+		position: absolute;
+		right: 20px;
+		top: 15px;
+		z-index: 20;
+		display: block;
+		
+		text-align: center;
+		
+		&:after {
+			display: block;
+			font: {
+				size: 24px;
+				weight: $bold;
+			}
+			content: 'x';
+		}
+	}
+
+	@media screen and ( min-width: 1170px ) {
+		left: calc((100% - 1170px)/2);
+	}
+	
+	@media screen and ( max-width: 480px ) {
+		padding: 40px 20px;
+	}
+	
+}

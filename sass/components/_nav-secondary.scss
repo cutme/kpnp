@@ -31,8 +31,32 @@
 		display: none;
 	}
 	
-	.current-menu-ancestor > a {
-		color: $black--brightest;
+	.current_page_item > a {
+		color: $blue;
+	}
+	
+	.sub-menu {
+		display: none;
+		
+		a {
+			font-size: em(14);
+		}
+	}
+
+	.current-menu-parent {
+		> a {
+			color: $black--brightest;
+		}
+
+		.sub-menu {
+			display: block;
+		}
+	}
+	
+	.current_page_item {
+		.sub-menu {
+			display: block;
+		}
 	}
 
 	> ul > li {
@@ -48,10 +72,13 @@
 	}
 	
 	.current-menu-item {
-		color: $blue;
+		> a {
+			border-color: $blue;
+			color: $blue;
+		}
 		
 		a {
-			border-color: $blue;
+			
 		}
 	}
 	

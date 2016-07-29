@@ -1,52 +1,23 @@
 .o-btn {
-	@include box-shadow( rgba(black, .15) 0 0 50px );
-	@include hover;
-	position: relative;
-	display: inline-block;
-	height: 70px;
-	background-color: white;
-	padding: 0 40px;
-	line-height: 70px;
-	white-space: nowrap;
-	font-size: em(20);
-	font-family: $text;
-	color: $blue;
-	
-	&:hover {
-		text-decoration: none !important;
-
-		.no-mobile & {
-			background-color: $blue;
-			color: white;
-		}
-		
-		i {
-			color: white;
-		}
-	}
-	
-	&:active {
-		@include box-shadow( rgba(black, .2) 0 0 34px );
-	}
-	
-	i {
-		@include hover;
-		margin-left: 10px;
-		color: $blue;
-	}
+	@include btn;
 	
 	&--blue {
-		background-color: $blue;
-		color: white;
+		@include btn-blue;
+	}
+	
+	@media screen and ( max-width: 1024px ) {
+		//padding: 0;
+		text-align: center;
+		font-size: 16px;
 		
-		&:hover {
-			background-color: $color-black !important;
+		.o-sidebar & {
+			padding: 0;
 		}
 	}
 	
 	@media screen and ( max-width: 480px ) {
 		width: 100%;
-		padding: 0 20px;
+		//padding: 0 20px;
 		text-align: center;
 	}
 	

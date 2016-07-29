@@ -1,10 +1,21 @@
 .c-posts {
 	border-top: 1px solid $gray--brightest;
+	
+	> ul {
+		@include flexbox;
+		@include flex-wrap(wrap);
+	}
 
 	&__box {
 		width: 50%;
-		
+
 		&--blue {
+			background-color: $blue;
+			color: white;
+		}
+		
+		&:first-child,
+		&:last-child {
 			background-color: $blue;
 			color: white;
 		}
@@ -35,11 +46,11 @@
 		&:nth-child(2n+1) {
 			clear: left;
 		}
-
-		&:hover {
-			.icon-arrow-right {
-				padding-left: 5px;
-			}
+	}
+	
+	&__link:hover {
+		.icon-arrow-right {
+			padding-left: 5px;
 		}
 	}
 	
@@ -61,19 +72,25 @@
 	}
 	
 	&__selected {
+		background-color: $blue;
 		margin-right: 5px;
 		padding: 0 5px;
 		font-weight: $black;
+		color: white;
 		
-		.c-posts__box--blue & {
+		.c-posts__box:first-child & {
 			background-color: white;
 			color: $blue;
 		}
 		
-		.c-posts__box--white & {
-			background-color: $blue;
-			color: white;
+		.c-posts__box:last-child & {
+			background-color: white;
+			color: $blue;
 		}
+		
+		//.c-posts__box--white & {
+			
+		//}
 	}
 	
 	@media screen and ( max-width: $grid-base-width+px ) {

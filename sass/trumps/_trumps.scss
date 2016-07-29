@@ -20,3 +20,25 @@
 		-webkit-transform-style: preserve-3d;
 	}
 }
+
+.s-target {
+	display: none;
+	
+	&.individual {
+		.individual & {
+			display: block;
+		}
+	}
+	
+	&.entrepreneurs {
+		.entrepreneurs & {
+			display: block;
+		}
+	}
+}
+
+
+
+.wpcf7-not-valid {
+	border-bottom-color: red !important;
+}

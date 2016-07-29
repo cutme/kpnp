@@ -1,6 +1,32 @@
 .c-share {
 	margin-bottom: 50px;
 	
+	path, svg {
+		@include hover;
+	}
+	
+	.addtoany_list {
+		a {
+			display: inline-block;
+			width: 40px; height: 40px;
+			margin-right: 10px;
+			
+			svg {
+				width: 40px; height: 40px;
+			}
+			
+			&:hover {
+				background-color: $blue;
+				text-decoration: none;
+				color: white;
+				
+				path {
+					fill: white;
+				}
+			}
+		}
+	}
+	
 	&__content {
 		float: left;
 	}

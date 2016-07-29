@@ -14,12 +14,17 @@ button {
 input, textarea {
 	-webkit-appearance: none;
 	text-rendering: optimizeLegibility; 
-	width: 100%;
 	font: {
 		family: $text;
 	}
 	cursor: text;
 	color: inherit;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+	width: 100%;
 }
 
 textarea {
